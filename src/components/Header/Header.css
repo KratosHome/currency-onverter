@@ -1,0 +1,19 @@
+.HeaderContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.HeaderContainer a {
+    text-decoration: none;
+    color: black;
+}
+
+.HeaderContainer a:hover {
+    color: red;
+}
+
+.active {
+    background-color: #de9b9b;
+    border-radius: 20px;
+    padding: 5px;
+}

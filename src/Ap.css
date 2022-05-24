@@ -1,0 +1,10 @@
+*,
+a,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", cursive;
+    font-size: calc((90vw - 470px) / (1980 - 470) * (16 - 10) + 25px);
+}

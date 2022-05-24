@@ -1,0 +1,30 @@
+.mayInputContainer{
+    margin: 10px 10px 10px 50px ;
+}
+
+.mayInputContainer label{
+    position: absolute;
+    font-size: 1em;
+    margin: -30px 0 0 15px;
+    background-color: white;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.mayInputContainer label span{
+    color: #e02b27;
+    font-size: 1.2rem;
+    margin: 0 0 0 5px;
+}
+
+.mayInputContainer input{
+    border: 1px solid rgba(44, 19, 19, 0.4);
+    border-radius: 3px;
+    width: 10em;
+    height: 50px;
+    margin-bottom: 7px;
+}
+
+.mayInputContainer label:hover{
+    cursor: pointer;
+}
