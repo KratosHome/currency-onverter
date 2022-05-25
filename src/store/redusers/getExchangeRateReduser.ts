@@ -1,6 +1,6 @@
 import { GetExchangeRateType } from "../type/cursesType";
 
-interface intialStateTupe {
+type intialStateTupe = {
     exchangeRate: any[]
     loading: boolean
 }

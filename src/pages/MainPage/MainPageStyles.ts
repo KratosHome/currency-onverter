@@ -1,38 +1,43 @@
-.MainPageSelector {
+import styled from "styled-components";
+
+export const MainPageStyle = styled.div`
+  .MainPageSelector {
     margin-left: 25px;
     border-radius: 5px;
-}
+  }
 
-.MainPageBlokSelect {
+  .MainPageBlokSelect {
     display: flex;
     justify-content: center;
-}
+  }
 
-.MainPageFilter {
+  .MainPageFilter {
     display: flex;
     justify-content: center;
     margin: 10px;
-}
+  }
 
-.MainPageFilter div {
+  .MainPageFilter div {
     margin: 10px;
-}
+  }
 
-.MainPageFilterCC {
+  .MainPageFilterCC {
     font-size: 0.7em;
-   padding-top: 8px;
-}
-.MainPageText{
+    padding-top: 8px;
+  }
+  .MainPageText{
     margin: 0 0 0 20px;
-}
-.MainPageBlok{
+  }
+  .MainPageBlok{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+  }
 
-.MainPageBlok2 {
+  .MainPageBlok2 {
     display: flex;
     justify-content: center;
 
-}
+  }
+`
+

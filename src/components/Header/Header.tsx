@@ -1,16 +1,16 @@
-import "./Header.css"
 import {NavLink} from "react-router-dom";
+import {HeaderStyles} from "./HeaderStyles";
 
-
-export const Header: React.FC<{}> = () => {
+export const Header = () => {
     return (
-        <div className="HeaderContainer">
+        <HeaderStyles>
             <NavLink to="/">
                 main
             </NavLink>
             <NavLink to="/converter">
                 converter
             </NavLink>
-        </div>
+        </HeaderStyles>
     )
 };
+

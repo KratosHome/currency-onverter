@@ -1,7 +1,9 @@
-import './Lodaer.css'
+import {LoaderStyles} from "./LoaderStyles"
 
 export const Loader = () => {
     return (
-        <div className="lds-dual-ring"> </div>
+        <LoaderStyles>
+            <div className="lds-dual-ring"> </div>
+        </LoaderStyles>
     )
 };

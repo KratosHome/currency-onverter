@@ -1,8 +1,8 @@
-import "./ExchangeRatePage.css"
 import {useState} from "react";
 import {useTypeSelector} from "../../hooks/useTypeSelector";
 import {Loader} from "../../components/Loader/Loader";
 import {SelectExchange} from "../../components/SelectExchange/SelectExchange";
+import {ExchangeRatePageStyles} from "./ExchangeRatePageStyles";
 
 
 export const ExchangeRatePage = () => {
@@ -20,19 +20,21 @@ export const ExchangeRatePage = () => {
     let filterExchange2 = exchangeRate.filter((item: any) => item.cc === cc)
 
     return (
-        <div className="ExchangeRateContainer">
-            {loading ? <Loader/> : null}
-            <input
-                type="number"
-                value={state}
-                onChange={changeInput}
-            />
-            <SelectExchange exchangeRate={exchangeRate} handleClick={changeSelect}/>
-            <div>
-                {filterExchange2.map((item: any) =>
-                    <div key={item.rate}>сумма: {item.rate * +state} UAH</div>
-                )}
+        <ExchangeRatePageStyles>
+            <div className="ExchangeRateContainer">
+                {loading ? <Loader/> : null}
+                <input
+                    type="number"
+                    value={state}
+                    onChange={changeInput}
+                />
+                <SelectExchange exchangeRate={exchangeRate} handleClick={changeSelect}/>
+                <div>
+                    {filterExchange2.map((item: any) =>
+                        <div key={item.rate}>сумма: {item.rate * +state} UAH</div>
+                    )}
+                </div>
             </div>
-        </div>
+        </ExchangeRatePageStyles>
     )
 };

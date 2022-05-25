@@ -1,5 +1,5 @@
 import {GetExchangeRateType} from "../type/cursesType";
-import {ExchangeRateServer} from "../../api/getCurse";
+import {ExchangeRateServer} from "../api/getCurse";
 import {Dispatch} from 'redux';
 
 export const setExchangeRateAction = (exchangeRate: any) => {

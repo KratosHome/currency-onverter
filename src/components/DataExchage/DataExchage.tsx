@@ -1,9 +1,6 @@
+import {SataExchangeType} from "./SataExchangeIType";
 
-interface SataExchangeIterfase{
-    filterExchange: any
-}
-
-export const DataExchange: React.FC<SataExchangeIterfase> = ({filterExchange}) => {
+export const DataExchange: React.FC<SataExchangeType> = ({filterExchange}) => {
     return (
         <>
             <div>

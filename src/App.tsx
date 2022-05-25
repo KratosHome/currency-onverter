@@ -2,12 +2,27 @@ import React, {useEffect} from 'react';
 import {Header} from "./components/Header/Header";
 import {AppRouter} from "./router/AppRouter";
 import {BrowserRouter} from "react-router-dom";
-import "./Ap.css"
 import {useDispatch} from "react-redux";
-import {getExchangeRateAction} from "./redux/action/GetExchangeRateAction";
+import {getExchangeRateAction} from "./store/action/GetExchangeRateAction";
+import {createGlobalStyle} from "styled-components";
+
+const Global = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+  *,
+  a,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: calc((90vw - 470px) / (1980 - 470) * (16 - 10) + 25px);
+    text-decoration: none;
+  }
+`
 
 function App() {
-
     const dispatch = useDispatch()
     useEffect(() => {
         getExchangeRateAction()(dispatch)
@@ -15,6 +30,7 @@ function App() {
 
     return (
         <BrowserRouter>
+            <Global/>
             <Header/>
             <AppRouter/>
         </BrowserRouter>

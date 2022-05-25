@@ -3,12 +3,12 @@ export enum GetExchangeRateType {
     IS_LOADING = "IS_LOADING"
 }
 
-interface setExchangeRateType {
+type setExchangeRateType = {
     type: GetExchangeRateType.SET_EXCHANGE_RATE_ENUM;
     curses: any[]
 }
 
-interface serIsLoading {
+type serIsLoading = {
     type: GetExchangeRateType.IS_LOADING;
     loading: boolean
 }
