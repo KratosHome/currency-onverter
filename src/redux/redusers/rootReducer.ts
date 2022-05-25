@@ -3,7 +3,7 @@ import { getExchangeRate } from './getExchangeRateReduser';
 
 
 export const rootReducer = combineReducers({
-    getExchangeRate: getExchangeRate
+    ExchangeRate: getExchangeRate
 })
 
 export type rootState = ReturnType<typeof rootReducer>
