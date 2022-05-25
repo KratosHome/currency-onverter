@@ -1,75 +1,34 @@
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useState} from "react";
-import {getExchangeRateAction} from "../../redux/action/GetExchangeRateAction";
+import {useState} from "react";
 import {useTypeSelector} from "../../hooks/useTypeSelector";
 import "./MainPage.css"
+import {SelectExchange} from "../../components/SelectExchange/SelectExchange";
+import {Loader} from "../../components/Loader/Loader";
 
 export const MainPage = () => {
 
-    const dispatch = useDispatch()
-    useEffect(() => {
-        getExchangeRateAction()(dispatch)
-    }, [dispatch]);
-
-
     const {exchangeRate, loading} = useTypeSelector((state) => state.ExchangeRate);
 
-
     const [cc, setCC] = useState("AUD")
-
-
-    const handleClick = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement> | React.MouseEvent<HTMLInputElement>) => {
+    const handleClick2 = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement> | React.MouseEvent<HTMLInputElement>) => {
         setCC(e.currentTarget.value)
-
     }
-
-    let filterExchange = exchangeRate.filter((item: any) => item.cc == cc)
-
-    const [ccBase, setCcBase] = useState("UAH")
-    let filterExchangeBase = exchangeRate.filter((item: any) => item.cc == ccBase)
-
-
-
-
+    let filterExchange = exchangeRate.filter((item: any) => item.cc === cc)
 
     return (
         <>
-            <div className="MainPageBlokSelect">
-                <div>
-                    {filterExchange.map((item: any) =>
-                        <div key={item.cc}>
-                            <div>дата: {item.exchangedate}</div>
+            {loading ? <Loader/> : null}
+            <div className="MainPageBlok">
+                <SelectExchange exchangeRate={exchangeRate} handleClick={handleClick2}/>
+                {
+                    exchangeRate.map((ite: any) =>
+                        <div key={ite.rate} className="MainPageBlok2">
+                            <div>1 {ite.txt} =</div>
+                            {filterExchange.map((item: any) =>
+                                <div key={item.rate}>{ite.rate / item.rate} {cc}.</div>
+                            )}
                         </div>
-                    )}
-                </div>
-                <div className="MainPageText">міняю:</div>
-                <select className="MainPageSelector" onChange={handleClick}>
-                    {exchangeRate.map((item: any) =>
-                        <option
-                            key={item.cc}
-                            value={item.cc}
-                            id={item.cc}
-                        >{item.cc}</option>
-                    )}
-                </select>
-                <div className="MainPageText">отримую:</div>
-                <select className="MainPageSelector" onChange={handleClick}>
-                    {exchangeRate.map((item: any) =>
-                        <option
-                            key={item.cc}
-                            value={item.cc}
-                            id={item.cc}
-                        >{item.cc}</option>
-                    )}
-                </select>
-            </div>
-            <div>
-                {filterExchange.map((item: any) =>
-                    <div key={item.cc} className="MainPageFilter">
-                        <div>1 {item.txt} =</div>
-                        <div>{item.rate} грн.</div>
-                    </div>
-                )}
+                    )
+                }
             </div>
         </>
     )
