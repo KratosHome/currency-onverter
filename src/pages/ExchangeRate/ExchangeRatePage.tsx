@@ -5,7 +5,7 @@ import {Loader} from "../../components/Loader/Loader";
 import {SelectExchange} from "../../components/SelectExchange/SelectExchange";
 
 
-export const ExchangeRatePage: React.FC<{}> = () => {
+export const ExchangeRatePage = () => {
     const {exchangeRate, loading} = useTypeSelector((state) => state.ExchangeRate);
 
     const [state, setState] = useState("")
