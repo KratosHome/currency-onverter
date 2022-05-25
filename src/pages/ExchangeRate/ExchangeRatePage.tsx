@@ -2,19 +2,22 @@ import "./ExchangeRatePage.css"
 import {useState} from "react";
 import {useTypeSelector} from "../../hooks/useTypeSelector";
 import {Loader} from "../../components/Loader/Loader";
+import {SelectExchange} from "../../components/SelectExchange/SelectExchange";
 
 
 export const ExchangeRatePage: React.FC<{}> = () => {
     const {exchangeRate, loading} = useTypeSelector((state) => state.ExchangeRate);
 
-    const [cc] = useState("USD")
-    let filterExchange = exchangeRate.filter((item: any) => item.cc === cc)
-
     const [state, setState] = useState("")
 
-    const handleshenge = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement> | React.MouseEvent<HTMLInputElement>) => {
+    const changeInput = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement> | React.MouseEvent<HTMLInputElement>) => {
         setState(e.currentTarget.value)
     }
+    const [cc, setCC] = useState("AUD")
+    const changeSelect = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement> | React.MouseEvent<HTMLInputElement>) => {
+        setCC(e.currentTarget.value)
+    }
+    let filterExchange2 = exchangeRate.filter((item: any) => item.cc === cc)
 
     return (
         <div className="ExchangeRateContainer">
@@ -22,11 +25,12 @@ export const ExchangeRatePage: React.FC<{}> = () => {
             <input
                 type="number"
                 value={state}
-                onChange={handleshenge}
-            /> <span>UAH</span>
+                onChange={changeInput}
+            />
+            <SelectExchange exchangeRate={exchangeRate} handleClick={changeSelect}/>
             <div>
-                {filterExchange.map((item: any) =>
-                    <div key={item.rate}>сумма: {item.rate * +state} USD</div>
+                {filterExchange2.map((item: any) =>
+                    <div key={item.rate}>сумма: {item.rate * +state} UAH</div>
                 )}
             </div>
         </div>
