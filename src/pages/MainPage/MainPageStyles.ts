@@ -25,10 +25,12 @@ export const MainPageStyle = styled.div`
     font-size: 0.7em;
     padding-top: 8px;
   }
-  .MainPageText{
+
+  .MainPageText {
     margin: 0 0 0 20px;
   }
-  .MainPageBlok{
+
+  .MainPageBlok {
     display: flex;
     flex-direction: column;
     align-items: center;

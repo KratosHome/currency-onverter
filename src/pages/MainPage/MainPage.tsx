@@ -4,11 +4,8 @@ import {MainPageStyle} from "../../ReExports";
 import {useAppSelector} from "../../ReExports";
 import {Loader} from "../../ReExports";
 
-
 export const MainPage = () => {
-
-    const {errors, loading, exchangeRate}  = useAppSelector(state => state.getExchangeReducerSlice)
-
+    const {errors, loading, exchangeRate} = useAppSelector(state => state.getExchangeReducerSlice)
 
     const [cc, setCC] = useState("AUD")
     const handleClick2 = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement> | React.MouseEvent<HTMLInputElement>) => {

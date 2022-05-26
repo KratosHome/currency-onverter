@@ -2,7 +2,6 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {fetshExchangeRateAction} from "../../../ReExports";
 import {initialState} from "../../../ReExports"
 
-
 export const getExchangeReducerSlice = createSlice({
     name: "getExchangeRate",
     initialState,

@@ -6,7 +6,7 @@ export const AppRouter = () => {
         <>
             <Routes>
                 {ProviderRouter.map((rote) => (
-                    <Route key={rote.path} path={rote.path} element={rote.component} />
+                    <Route key={rote.path} path={rote.path} element={rote.component}/>
                 ))}
             </Routes>
         </>

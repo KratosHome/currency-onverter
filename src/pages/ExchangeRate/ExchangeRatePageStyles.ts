@@ -1,15 +1,17 @@
 import styled from "styled-components";
 
 export const ExchangeRatePageStyles = styled.div`
-  .ExchangeRateContainer{
+  .ExchangeRateContainer {
     display: flex;
     justify-content: center;
     margin-top: 30px;
   }
-  .ExchangeRateContainer input{
+
+  .ExchangeRateContainer input {
     border-radius: 15px;
   }
-  .ExchangeRateContainer div{
+
+  .ExchangeRateContainer div {
     margin-left: 20px;
   }
 `

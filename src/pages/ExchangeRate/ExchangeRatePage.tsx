@@ -4,8 +4,6 @@ import {ExchangeRatePageStyles} from "../../ReExports";
 import {useAppSelector} from "../../ReExports";
 import {Loader} from "../../ReExports";
 
-
-
 export const ExchangeRatePage = () => {
     const {errors, loading, exchangeRate} = useAppSelector(state => state.getExchangeReducerSlice)
 
