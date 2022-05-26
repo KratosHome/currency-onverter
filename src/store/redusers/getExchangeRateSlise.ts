@@ -1,12 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {fetshExchangeRateAction} from "../action/ActionCreata";
-
-type ExchangeRateStateType = {
-    exchangeRate: any[]
-    loading: boolean
-    errors: string
-    count: number
-}
+import {ExchangeRateStateType} from "./ExchangeRateStateType";
 
 const initialState: ExchangeRateStateType = {
     exchangeRate: [],
@@ -14,7 +8,6 @@ const initialState: ExchangeRateStateType = {
     errors: "",
     count: 0
 }
-
 
 export const getExchangeReducerSlise = createSlice({
     name: "getExchangeRate",
