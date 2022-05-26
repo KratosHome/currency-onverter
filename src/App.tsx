@@ -2,9 +2,9 @@ import React, {useEffect} from 'react';
 import {Header} from "./components/Header/Header";
 import {AppRouter} from "./router/AppRouter";
 import {BrowserRouter} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {getExchangeRateAction} from "./store/action/GetExchangeRateAction";
 import {createGlobalStyle} from "styled-components";
+import {useAppDispatch} from "./hooks/useRdex";
+import {ExchangeRateAction} from "./store/action/ActionCreata";
 
 const Global = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
@@ -23,10 +23,11 @@ const Global = createGlobalStyle`
 `
 
 function App() {
-    const dispatch = useDispatch()
+
+    const dispatch = useAppDispatch()
     useEffect(() => {
-        getExchangeRateAction()(dispatch)
-    }, [dispatch]);
+        dispatch(ExchangeRateAction())
+    }, []);
 
     return (
         <BrowserRouter>

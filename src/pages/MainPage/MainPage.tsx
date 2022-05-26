@@ -1,11 +1,14 @@
 import {useState} from "react";
-import {useTypeSelector} from "../../hooks/useTypeSelector";
 import {SelectExchange} from "../../components/SelectExchange/SelectExchange";
 import {Loader} from "../../components/Loader/Loader";
 import {MainPageStyle} from "./MainPageStyles";
+import {useAppSelector} from "../../hooks/useRdex";
+
 
 export const MainPage = () => {
-    const {exchangeRate, loading} = useTypeSelector((state) => state.ExchangeRate);
+
+    const {errors, loading, exchangeRate}  = useAppSelector(state => state.getExchangeReduserSlise)
+
 
     const [cc, setCC] = useState("AUD")
     const handleClick2 = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement> | React.MouseEvent<HTMLInputElement>) => {

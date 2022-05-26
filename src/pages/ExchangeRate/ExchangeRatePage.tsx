@@ -1,12 +1,14 @@
 import {useState} from "react";
-import {useTypeSelector} from "../../hooks/useTypeSelector";
 import {Loader} from "../../components/Loader/Loader";
 import {SelectExchange} from "../../components/SelectExchange/SelectExchange";
 import {ExchangeRatePageStyles} from "./ExchangeRatePageStyles";
+import {useAppSelector} from "../../hooks/useRdex";
+
 
 
 export const ExchangeRatePage = () => {
-    const {exchangeRate, loading} = useTypeSelector((state) => state.ExchangeRate);
+    const {count, loading, exchangeRate}  = useAppSelector(state => state.getExchangeReduserSlise)
+
 
     const [state, setState] = useState("")
 
