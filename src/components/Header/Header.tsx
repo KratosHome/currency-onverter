@@ -1,5 +1,5 @@
 import {NavLink} from "react-router-dom";
-import {HeaderStyles} from "./HeaderStyles";
+import {HeaderStyles} from "../../ReExports";
 
 export const Header = () => {
     return (

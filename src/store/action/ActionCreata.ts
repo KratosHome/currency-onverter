@@ -1,4 +1,4 @@
-import {ExchangeRateServer} from "../api/getCurse";
+import {ExchangeRateServer} from "../../ReExports";
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
 /*

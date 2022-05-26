@@ -1,4 +1,4 @@
-import {LoaderStyles} from "./LoaderStyles"
+import {LoaderStyles} from "../../ReExports"
 
 export const Loader = () => {
     return (

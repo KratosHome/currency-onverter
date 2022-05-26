@@ -1,24 +1,12 @@
 import React, {useEffect} from 'react';
-import {Header} from "./components/Header/Header";
-import {AppRouter} from "./router/AppRouter";
 import {BrowserRouter} from "react-router-dom";
-import {createGlobalStyle} from "styled-components";
-import {useAppDispatch} from "./hooks/useRdex";
-import { fetshExchangeRateAction} from "./store/action/ActionCreata";
+import {Header} from "./ReExports";
+import {AppRouter} from "./ReExports";
+import {useAppDispatch} from "./ReExports";
+import { fetshExchangeRateAction} from "./ReExports";
+import {GlobalCss} from "./ReExports";
 
-const Global = createGlobalStyle`
-  *,
-  a,
-  *::after,
-  *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: calc((90vw - 470px) / (1980 - 470) * (16 - 10) + 25px);
-    text-decoration: none;
-  }
-`
+
 
 function App() {
     const dispatch = useAppDispatch()
@@ -28,7 +16,7 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Global/>
+            <GlobalCss/>
             <Header/>
             <AppRouter/>
         </BrowserRouter>

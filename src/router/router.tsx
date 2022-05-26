@@ -1,5 +1,5 @@
-import {ExchangeRatePage} from "../pages/ExchangeRate/ExchangeRatePage";
-import {MainPage} from "../pages/MainPage/MainPage";
+import {ExchangeRatePage} from "../ReExports";
+import {MainPage} from "../ReExports";
 
 
 export const ProviderRouter: any[] = [

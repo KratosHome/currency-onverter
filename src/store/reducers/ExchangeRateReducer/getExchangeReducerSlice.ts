@@ -1,15 +1,9 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {fetshExchangeRateAction} from "../action/ActionCreata";
-import {ExchangeRateStateType} from "./ExchangeRateStateType";
+import {fetshExchangeRateAction} from "../../../ReExports";
+import {initialState} from "../../../ReExports"
 
-const initialState: ExchangeRateStateType = {
-    exchangeRate: [],
-    loading: true,
-    errors: "",
-    count: 0
-}
 
-export const getExchangeReducerSlise = createSlice({
+export const getExchangeReducerSlice = createSlice({
     name: "getExchangeRate",
     initialState,
     reducers: {},
@@ -28,4 +22,4 @@ export const getExchangeReducerSlise = createSlice({
         },
     }
 })
-export default getExchangeReducerSlise.reducer
+export default getExchangeReducerSlice.reducer

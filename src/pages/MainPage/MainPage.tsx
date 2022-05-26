@@ -1,13 +1,13 @@
 import {useState} from "react";
-import {SelectExchange} from "../../components/SelectExchange/SelectExchange";
-import {Loader} from "../../components/Loader/Loader";
-import {MainPageStyle} from "./MainPageStyles";
-import {useAppSelector} from "../../hooks/useRdex";
+import {SelectExchange} from "../../ReExports";
+import {MainPageStyle} from "../../ReExports";
+import {useAppSelector} from "../../ReExports";
+import {Loader} from "../../ReExports";
 
 
 export const MainPage = () => {
 
-    const {errors, loading, exchangeRate}  = useAppSelector(state => state.getExchangeReduserSlise)
+    const {errors, loading, exchangeRate}  = useAppSelector(state => state.getExchangeReducerSlice)
 
 
     const [cc, setCC] = useState("AUD")

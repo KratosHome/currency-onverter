@@ -1,4 +1,4 @@
-import {SelectExchangeType} from "./SelectExchangeType";
+import {SelectExchangeType} from "../../ReExports"
 
 
 export const SelectExchange: React.FC<SelectExchangeType> = ({exchangeRate, handleClick}) => {
