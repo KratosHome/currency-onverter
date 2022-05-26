@@ -9,7 +9,6 @@ import {useAppSelector} from "../../hooks/useRdex";
 export const ExchangeRatePage = () => {
     const {errors, loading, exchangeRate}  = useAppSelector(state => state.getExchangeReduserSlise)
 
-
     const [state, setState] = useState("")
 
     const changeInput = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement> | React.MouseEvent<HTMLInputElement>) => {
