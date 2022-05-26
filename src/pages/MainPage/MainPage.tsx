@@ -18,6 +18,7 @@ export const MainPage = () => {
 
     return (
         <>
+            {errors ? <div>Помилка завантаження{errors}</div> : null}
             {loading ? <Loader/> : null}
             <MainPageStyle>
                 <div className="MainPageBlok">

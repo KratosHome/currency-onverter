@@ -1,13 +1,14 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {fetshExchangeRateAction} from "../action/ActionCreata";
 
-type ExchangeRateState = {
+type ExchangeRateStateType = {
     exchangeRate: any[]
     loading: boolean
     errors: string
     count: number
 }
 
-const initialState: ExchangeRateState = {
+const initialState: ExchangeRateStateType = {
     exchangeRate: [],
     loading: true,
     errors: "",
@@ -18,20 +19,20 @@ const initialState: ExchangeRateState = {
 export const getExchangeReducerSlise = createSlice({
     name: "getExchangeRate",
     initialState,
-    reducers: {
-        getExchangeReducerFetching(state){
-            state.loading = true
-        },
-        getExchangeReducerSucces(state, action:  PayloadAction<any[]>){
+    reducers: {},
+    extraReducers: {
+        [fetshExchangeRateAction.fulfilled.type]: (state, action: PayloadAction<any[]>) => {
             state.loading = false
             state.errors = ""
             state.exchangeRate = action.payload
         },
-        getExchangeReducerError(state, action: PayloadAction<string>){
-            state.loading = false
+        [fetshExchangeRateAction.pending.type]: (state) => {
+            state.loading = true
+        },
+        [fetshExchangeRateAction.rejected.type]: (state, action: PayloadAction<string>) => {
+            state.loading = false;
             state.errors = action.payload
-        }
-    },
+        },
+    }
 })
-
 export default getExchangeReducerSlise.reducer

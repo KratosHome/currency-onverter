@@ -7,7 +7,7 @@ import {useAppSelector} from "../../hooks/useRdex";
 
 
 export const ExchangeRatePage = () => {
-    const {count, loading, exchangeRate}  = useAppSelector(state => state.getExchangeReduserSlise)
+    const {errors, loading, exchangeRate}  = useAppSelector(state => state.getExchangeReduserSlise)
 
 
     const [state, setState] = useState("")
@@ -24,6 +24,7 @@ export const ExchangeRatePage = () => {
     return (
         <ExchangeRatePageStyles>
             <div className="ExchangeRateContainer">
+                {errors ? <div>Помилка завантаження {errors}</div> : null}
                 {loading ? <Loader/> : null}
                 <input
                     type="number"
