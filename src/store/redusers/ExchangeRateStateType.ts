@@ -3,4 +3,5 @@ export type ExchangeRateStateType = {
     loading: boolean
     errors: string
     count: number
+    test: any
 }
