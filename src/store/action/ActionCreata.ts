@@ -1,26 +1,16 @@
 import {ExchangeRateServer} from "../api";
-import {createAsyncThunk} from "@reduxjs/toolkit";
+import {AppDispatch} from "../../hooks/RootReducerType";
+import {getExchangeReducerSlice} from "../reducers";
 
-/*
-export const ExchangeRateAction = () => async (dispatch: AppDispatch) => {
+
+export const fetshExchangeRateAction = () => async (dispatch: AppDispatch) => {
     try{
-        dispatch(getExchangeReducerSlise.actions.getExchangeReducerFetching())
+        dispatch(getExchangeReducerSlice.actions.getExchangeReducerFetching())
         let response = await ExchangeRateServer.getExchangeRate()
-        dispatch(getExchangeReducerSlise.actions.getExchangeReducerSucces(response.data))
+        dispatch(getExchangeReducerSlice.actions.getExchangeReducerSucces(response.data))
     } catch (e: any) {
-        dispatch(getExchangeReducerSlise.actions.getExchangeReducerError(e.message))
+        dispatch(getExchangeReducerSlice.actions.getExchangeReducerError(e.message))
     }
 }
-*/
 
-export const fetshExchangeRateAction = createAsyncThunk(
-    'exchange',
-    async (_, thunkAPI) => {
-        try {
-            let response = await ExchangeRateServer.getExchangeRate()
-            return response.data
-        } catch (e) {
-            return thunkAPI.rejectWithValue("Не вдалося загрузити")
-        }
-    }
-)
+

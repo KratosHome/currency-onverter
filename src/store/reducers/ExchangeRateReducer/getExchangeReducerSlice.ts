@@ -1,24 +1,31 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {fetshExchangeRateAction} from "../../action";
 import {initialState} from "./initialState"
+
 
 export const getExchangeReducerSlice = createSlice({
     name: "getExchangeRate",
     initialState,
-    reducers: {},
-    extraReducers: {
-        [fetshExchangeRateAction.fulfilled.type]: (state, action: PayloadAction<any[]>) => {
-            state.loading = false
-            state.errors = ""
-            state.exchangeRate = action.payload
-        },
-        [fetshExchangeRateAction.pending.type]: (state) => {
-            state.loading = true
-        },
-        [fetshExchangeRateAction.rejected.type]: (state, action: PayloadAction<string>) => {
-            state.loading = false;
-            state.errors = action.payload
-        },
-    }
+    reducers: {
+        getExchangeReducerFetching: (state:any) => ({
+            ...state,
+            loading: true
+        }),
+        getExchangeReducerSucces: (state:any , action: PayloadAction<any[]>) => ({
+            ...state,
+            exchangeRate: action.payload,
+            loading: false
+        }),
+        getExchangeReducerError: (state:any , action: PayloadAction<any[]>) => ({
+            ...state,
+            errors: action.payload,
+            loading: false
+        }),
+    },
 })
 export default getExchangeReducerSlice.reducer
+
+/*
+ state.loading = false;
+            state.errors = action.payload
+
+ */
