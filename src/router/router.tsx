@@ -1,5 +1,5 @@
-import {ExchangeRatePage} from "../ReExports";
-import {MainPage} from "../ReExports";
+import {ExchangeRatePage} from "../pages";
+import {MainPage} from "../pages";
 
 export const ProviderRouter: any[] = [
     {path: "/", component: <MainPage/>},
