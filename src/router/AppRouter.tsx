@@ -1,5 +1,5 @@
 import {Route, Routes} from "react-router";
-import {ProviderRouter} from "../ReExports";
+import {ProviderRouter} from "./router";
 
 export const AppRouter = () => {
     return (

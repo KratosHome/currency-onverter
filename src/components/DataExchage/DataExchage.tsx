@@ -1,4 +1,4 @@
-import {SataExchangeType} from "../../ReExports";
+import {SataExchangeType} from "./SataExchangeIType";
 
 export const DataExchange: React.FC<SataExchangeType> = ({filterExchange}) => {
     return (

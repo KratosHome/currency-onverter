@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import {BrowserRouter} from "react-router-dom";
-import {Header} from "./ReExports";
-import {AppRouter} from "./ReExports";
-import {useAppDispatch} from "./ReExports";
-import {fetshExchangeRateAction} from "./ReExports";
-import {GlobalCss} from "./ReExports";
+import {Header} from "./components";
+import {AppRouter} from "./router";
+import {useAppDispatch} from "./hooks";
+import {fetshExchangeRateAction} from "./store";
+import {GlobalCss} from "./GlobalCss";
 
 function App() {
     const dispatch = useAppDispatch()

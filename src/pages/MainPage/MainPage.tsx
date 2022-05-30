@@ -1,8 +1,8 @@
 import {useState} from "react";
-import {SelectExchange} from "../../ReExports";
-import {MainPageStyle} from "../../ReExports";
-import {useAppSelector} from "../../ReExports";
-import {Loader} from "../../ReExports";
+import {SelectExchange} from "../../components";
+import {MainPageStyle} from "./MainPageStyles";
+import {useAppSelector} from "../../hooks";
+import {Loader} from "../../components";
 
 export const MainPage = () => {
     const {errors, loading, exchangeRate} = useAppSelector(state => state.getExchangeReducerSlice)
